@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleiron <cleiron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 22:21:53 by cleiron           #+#    #+#             */
-/*   Updated: 2025/08/16 19:40:49 by cleiron          ###   ########.fr       */
+/*   Created: 2025/08/23 15:50:26 by cleiron           #+#    #+#             */
+/*   Updated: 2025/08/23 16:04:58 by cleiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void)
+void ft_putstr(char *str)
 {
-    char c;
-    c = 'z';
-    
-    while(c >= 'a')
+    int i = 0;
+
+    while(str[i] != '\0')
     {
-        write(1, &c, 1);
-        c--;
+        write(1, &str[i], 1);
+        i++;
     }
 }
-int main()
+
+int main(void)
 {
-    ft_print_reverse_alphabet();
+    char str[] = "Cosmic";
+    ft_putstr(str);
     return 0;
 }

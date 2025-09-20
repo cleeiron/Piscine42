@@ -1,30 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleiron <cleiron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 22:21:53 by cleiron           #+#    #+#             */
-/*   Updated: 2025/08/16 19:40:49 by cleiron          ###   ########.fr       */
+/*   Created: 2025/09/15 14:22:18 by cleiron           #+#    #+#             */
+/*   Updated: 2025/09/15 14:36:58 by cleiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void)
+void ft_putstr(char *str)
 {
-    char c;
-    c = 'z';
-    
-    while(c >= 'a')
+    int i = 0;
+
+    while(str[i] != '\0')
     {
-        write(1, &c, 1);
-        c--;
+        write(1, &str[i], 1);
+        i++;
     }
 }
-int main()
+
+char *ft_strcpy(char *dest, char *src)
 {
-    ft_print_reverse_alphabet();
+    int i = 0;
+    
+    while(src[i] != '\0')
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
+    return dest;
+}
+
+int main(void)
+{
+    char dest[10];
+    char src[] = "Cosmic";
+    
+    ft_strcpy(dest, src);
+    ft_putstr(dest);
+    write(1, "\n", 1);
     return 0;
 }

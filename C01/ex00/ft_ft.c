@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleiron <cleiron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 22:21:53 by cleiron           #+#    #+#             */
-/*   Updated: 2025/08/16 19:40:49 by cleiron          ###   ########.fr       */
+/*   Created: 2025/08/19 21:58:07 by cleiron           #+#    #+#             */
+/*   Updated: 2025/08/19 22:28:17 by cleiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void)
+void ft_putchar(char c)
 {
-    char c;
-    c = 'z';
-    
-    while(c >= 'a')
-    {
-        write(1, &c, 1);
-        c--;
-    }
+    write(1, &c, 1);
 }
-int main()
+
+void ft_ft(int *nbr)
 {
-    ft_print_reverse_alphabet();
+    *nbr = 42;
+}
+
+int main(void)
+{
+    int a;
+    
+    ft_ft(&a);
+    if(a >= 10)
+    {
+        ft_putchar((a / 10) + '0');
+        ft_putchar((a % 10) + '0');
+    }
     return 0;
 }

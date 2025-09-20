@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cleiron <cleiron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 22:21:53 by cleiron           #+#    #+#             */
-/*   Updated: 2025/08/16 19:40:49 by cleiron          ###   ########.fr       */
+/*   Created: 2025/09/16 21:37:23 by cleiron           #+#    #+#             */
+/*   Updated: 2025/09/17 09:47:22 by cleiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void ft_print_reverse_alphabet(void)
+int ft_str_is_printable(char *str)
 {
-    char c;
-    c = 'z';
-    
-    while(c >= 'a')
+    int i = 0;
+
+    while(str[i] != '\0')
     {
-        write(1, &c, 1);
-        c--;
+        if(str[i] >= 32 && str[i] <= 126)
+            i++;
+        else 
+            return 0;
     }
+    return 1;      
 }
-int main()
+
+int main(void)
 {
-    ft_print_reverse_alphabet();
-    return 0;
+    char *str = "cosmic";
+    char *str1;
+
+    printf("%d", ft_str_is_printable(str));
+    printf("%d", ft_str_is_printable(str1));
+    
+   return 0; 
 }
