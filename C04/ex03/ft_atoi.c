@@ -6,10 +6,11 @@
 /*   By: cleiron <cleiron@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 19:44:50 by cleiron           #+#    #+#             */
-/*   Updated: 2025/10/02 21:51:42 by cleiron          ###   ########.fr       */
+/*   Updated: 2025/10/14 17:26:55 by cleiron          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 
 int ft_atoi(char* str)
 {
@@ -35,4 +36,11 @@ int ft_atoi(char* str)
            i++; 
     }
     return result * sign;
+}
+
+int main(void)
+{
+    char *str = " !d    df45e5d6f";
+    printf("%d", ft_atoi(str));
+    
 }
